@@ -40,6 +40,7 @@ $routes->set404Override();
 $routes->get('/','CrudController::index');
 $routes->post('/create','CrudController::Create');
 $routes->get('/update/(:num)','CrudController::Update/$1');
+$routes->post('/update/update','CrudController::PostUpdate');
 $routes->get('/delete/(:num)','CrudController::Delete/$1');
 
 

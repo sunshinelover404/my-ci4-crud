@@ -8,6 +8,8 @@ class CrudModel extends Model
 {
    
 
+
+
     protected $DBGroup          = 'default';
     protected $table            = 'cruds';
     protected $primaryKey       = 'id';
@@ -16,7 +18,7 @@ class CrudModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['id','name','fname','age','depart'];
 
     // Dates
     protected $useTimestamps = false;
@@ -41,4 +43,15 @@ class CrudModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+public function getresult(){
+    $query =$this->db->query('SELECT name FROM cruds');
+    $results = $query->getResult();
+    return $results;
+
+
+}
+
+
+
 }
